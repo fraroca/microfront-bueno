@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd mf-geotributos && ng serve\" \"cd mf-ibi && ng serve\" \"cd mf-shared && ng serve\" \"cd mf-shell && ng serve\""
+    "start": "concurrently \"cd mf-geotributos && ng serve\" \"cd mf-ibi && ng serve\" \"cd mf-shared && ng serve\" \"cd mf-shell && ng serve\"",
+    "install-all": "concurrently \"cd mf-geotributos && npm install --legacy-peer-deps\" \"cd mf-ibi && npm install --legacy-peer-deps\" \"cd mf-shared && npm install --legacy-peer-deps\" \"cd mf-shell && npm install --legacy-peer-deps\""
   },
   "repository": {
     "type": "git",
