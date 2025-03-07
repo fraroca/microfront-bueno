@@ -1,0 +1,34 @@
+<!--<div class="container">
+  <h1 routerLink="/">Shell</h1>
+  <div class="cart" routerLink="/payment">
+    <span class="material-icons"> shopping_cart </span>
+    <span class="cart__count"> {{ count }} </span>
+  </div>
+  <h1>App Shell</h1>
+    <button (click)="loadMicrofrontend1()">Cargar Microfrontend 1</button>
+    <ng-container *ngComponentOutlet="microfrontendComponent; inputs: inputs; outputs: outputs"></ng-container>
+    <ng-container #dynamicContainer></ng-container>
+</div>
+
+<router-outlet></router-outlet>-->
+
+<div class="app-container">
+  <nav class="side-nav">
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li>
+        <a routerLink="/ibi" routerLinkActive="active" (click)="toggleSubMenu($event)">IBI</a>
+        <ul class="submenu" [class.open]="isSubMenuOpen">
+          <li><a routerLink="/ibi/gestion-principal" routerLinkActive="active">Gestión Principal</a></li>
+          <li><a routerLink="/ibi/generar-padron" routerLinkActive="active">Generar Padrón</a></li>
+          <li><a routerLink="/ibi/enlazar-inmuebles" routerLinkActive="active">Enlazar Inmuebles</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/ivtm" routerLinkActive="active">IVTM (REACT)</a></li>
+      <li><a routerLink="/geotributos" routerLinkActive="active">GeoTributos</a></li>
+    </ul>
+  </nav>
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
+</div>

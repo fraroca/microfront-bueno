@@ -1,0 +1,21 @@
+<div class="summary-container">
+    <h2>Resumen del IAE SHARED</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Actividad</th>
+          <th>Base Imponible (€)</th>
+          <th>Cuota (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of iaeData">
+          <td>{{ item.codigo }}</td>
+          <td>{{ item.actividad }}</td>
+          <td>{{ item.baseImponible | number }}</td>
+          <td>{{ item.cuota | number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

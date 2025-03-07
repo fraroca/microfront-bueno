@@ -1,0 +1,21 @@
+<div class="summary-container">
+    <h2>Resumen de Tasas Municipales SHARED</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Concepto</th>
+          <th>Importe (€)</th>
+          <th>Periodo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tasasData">
+          <td>{{ item.codigo }}</td>
+          <td>{{ item.concepto }}</td>
+          <td>{{ item.importe | number }}</td>
+          <td>{{ item.periodo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

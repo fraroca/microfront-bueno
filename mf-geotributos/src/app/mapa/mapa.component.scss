@@ -1,0 +1,32 @@
+/* Contenedor del mapa */
+#map {
+    height: 500px; /* Altura del mapa */
+    width: 90%; /* Ancho del mapa */
+    margin: 20px auto; /* Centrar el mapa */
+    border: 10px solid #fff; /* Marco blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    overflow: hidden; /* Evitar que el contenido se desborde */
+  }
+  
+  /* Estilo para el popup de los marcadores */
+  .leaflet-popup-content-wrapper {
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #f9f9f9; /* Fondo claro */
+  }
+  
+  .leaflet-popup-content {
+    font-family: 'Arial', sans-serif; /* Fuente moderna */
+    font-size: 14px;
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  .leaflet-popup-tip {
+    background-color: #f9f9f9; /* Fondo claro para la punta del popup */
+  }
+  
+  /* Estilo para los marcadores */
+  .leaflet-marker-icon {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Sombra para los marcadores */
+  }

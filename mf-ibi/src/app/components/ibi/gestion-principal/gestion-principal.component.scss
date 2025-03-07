@@ -1,0 +1,57 @@
+.gestion-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #1abc9c;
+    color: white;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .btn-edit, .btn-delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-edit {
+    background-color: #3498db;
+    color: white;
+    margin-right: 5px;
+  }
+  
+  .btn-delete {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c0392b;
+  }
