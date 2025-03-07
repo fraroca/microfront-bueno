@@ -1,0 +1,23 @@
+{
+  "name": "nuevo_microfrontend---copia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd mf-geotributos && ng serve\" \"cd mf-ibi && ng serve\" \"cd mf-shared && ng serve\" \"cd mf-shell && ng serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraroca/microfront-bueno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fraroca/microfront-bueno/issues"
+  },
+  "homepage": "https://github.com/fraroca/microfront-bueno#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
