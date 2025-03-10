@@ -58,11 +58,12 @@ const routes: Routes = [
   {
     path: 'ivtm',
     loadComponent: () =>
+
       loadRemoteModule({
         type: 'module',
-        remoteEntry: 'http://localhost:4206/remoteEntry.js',
-        exposedModule: './SharedComponent',
-      }).then(m => m.AppComponent)
+        remoteEntry: 'http://localhost:4001/remoteEntry.js',
+        exposedModule: './Header',
+      }).then(m => m.Header)
   },
   {
     path: 'geotributos',

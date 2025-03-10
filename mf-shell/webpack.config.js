@@ -4,6 +4,7 @@ const {
 } = require("@angular-architects/module-federation/webpack");
 
 const moduleFederationConfig = withModuleFederationPlugin({
+
   shared: {
     ...shareAll({
       singleton: true,

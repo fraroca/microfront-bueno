@@ -39,28 +39,33 @@ export class AppComponent {
   }
 
   async loadMicrofrontend1() {
-    /*this.dynamicContainer.clear();
-    const m = await loadRemoteModule({
-      type: 'module',
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
-      exposedModule: './PaymentComponent',
-    });
-    this.microfrontendComponent = m.PaymentComponent;
-    this.componentRef= this.dynamicContainer.createComponent(this.microfrontendComponent);
-    this.componentRef.instance.saludo = 'Jesús';
+   // you can load the remote module here instead of in webpack config
+   /*const remoteReact = await loadRemoteModule({
+    remoteEntry: 'http://localhost:4001/remoteEntry.js',
+    remoteName: 'remote',
+    exposedModule: './Header'
+  });
+    this.microfrontendComponent = remoteReact.Header;*/
+    debugger;
 
-    // Suscribirse al evento emitido por el componente dinámico
-    this.componentRef.instance.eventoPersonalizado.subscribe((e) => {
-      
+    /*const l = await loadRemoteModule({
+      remoteEntry: 'http://localhost:4210/remoteEntry.js',
+      remoteName: 'remote',
+      exposedModule: './Header',
     });*/
-
-    const m = await loadRemoteModule({
-      type: 'module',
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
-      exposedModule: './IbiGestionComponent',
+    const l = await loadRemoteModule({
+      remoteName: 'remote',
+      remoteEntry: 'http://localhost:4210/remoteEntry.js',
+      exposedModule: './Header',
     });
-    this.microfrontendComponent = m.IbiGestionComponent;
+    debugger;
+    this.microfrontendComponent = l.default;
 
+    // Renderiza el componente React en el contenedor
+    /*const container = document.getElementById('headerContainer');
+    if (container) {
+      ReactDOM.render(React.createElement(this.microfrontendComponent), container);
+    }*/
   }
 
   handleEventoPersonalizado(evento: string) {
