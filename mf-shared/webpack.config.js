@@ -5,9 +5,9 @@ module.exports = withModuleFederationPlugin({
   name: 'mf-shared',
 
   exposes: {
-    './SharedComponent': './src/app/app.component.ts',
     './DatosIaeSharedComponent': './src/app/datos-iae/datos-iae.component.ts',
     './DatosTasasSharedComponent': './src/app/datos-tasas/datos-tasas.component.ts',
+    './DatosGraphQlSharedComponent': './src/app/datos-graphql/datos-graphql.component.ts',
   },
 
   shared: {

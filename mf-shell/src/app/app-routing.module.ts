@@ -73,10 +73,16 @@ const routes: Routes = [
         remoteEntry: 'http://localhost:4205/remoteEntry.js',
         exposedModule: './GeotributosComponent',
       }).then(m => m.AppComponent)
+  },
+  {
+    path: 'consulta_graphql',
+    loadComponent: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4206/remoteEntry.js',
+        exposedModule: './DatosGraphQlSharedComponent',
+      }).then(m => m.DatosGraphqlComponent)
   }
-
-
-  
 ];
 
 @NgModule({
