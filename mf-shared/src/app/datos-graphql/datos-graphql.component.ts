@@ -17,6 +17,7 @@ export class DatosGraphqlComponent  implements OnInit{
   // Campos seleccionados por el usuario
   selectedFields: string[] = [];
   data$ = null;
+  data_voluntaria = null;
   error: any;
   query = gql`
       query {
@@ -27,12 +28,38 @@ export class DatosGraphqlComponent  implements OnInit{
           }
         }
     `;
+
+  constructor() {}
   ngOnInit(): void {
     /*this.apollo.watchQuery<any>({
       query: this.query
     }).valueChanges.subscribe(({ data, loading }) => {
       this.data$ = data.characters.results
     });*/
+
+    this.apollo.use('recaudacion')
+      .query<any>({
+        query: gql`
+        query {
+          voluntariaimportespendientes {
+            edges {
+              node {
+                importePendiente
+                importe
+                deudores
+                tributo
+              }
+            }
+          }
+        }
+      `,
+        fetchPolicy: 'network-only', // Ignorar la caché
+      })
+      .subscribe(({ data, loading }) => {
+        debugger;
+        this.data_voluntaria = data.characters.results;
+        this.loading = false;
+      });
     
   }
 
@@ -80,6 +107,10 @@ export class DatosGraphqlComponent  implements OnInit{
         this.data$ = data.characters.results;
         this.loading = false;
       });
+
+      /*this.graphqlService.queryEndpoint1().subscribe((result) => {
+        debugger;
+      });*/
   }
 
 }

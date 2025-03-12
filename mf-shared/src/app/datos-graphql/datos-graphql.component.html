@@ -49,6 +49,31 @@
         </div>
       </div>
 
+
+      <div *ngIf="data$" class="results-container">
+        <h2>Resultados:</h2>
+        <ul class="character-list">
+          <li *ngFor="let character of data$" class="character-card">
+            <div *ngIf="selectedFields.includes('image')" class="character-image">
+              <img [src]="character.image" [alt]="character.name" />
+            </div>
+            <div class="character-details">
+              <div *ngFor="let field of selectedFields">
+                <ng-container *ngIf="field !== 'image'">
+                  <strong>{{ field | titlecase }}:</strong>
+                  <span *ngIf="field === 'created'; else defaultField">
+                    {{ character[field] | date: 'dd/MM/yyyy' }}
+                  </span>
+                  <ng-template #defaultField>
+                    {{ character[field] }}
+                  </ng-template>
+                </ng-container>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     <!--<div class="container" *ngIf="data$">
         <h1>Personajes de Rick y Morty</h1>
         <table>
