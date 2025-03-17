@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit{
   microfrontendComponent: any;
   datosIaeShared : any;
   datosTasasShared : any;
+  datosIbiShared : any;
+  datosIvtmShared : any;
 
   constructor(private cdr: ChangeDetectorRef, private appRef: ApplicationRef) {}
   async ngOnInit() {
@@ -37,6 +39,20 @@ export class HomeComponent implements OnInit{
       exposedModule: './DatosTasasSharedComponent',
     });
     this.datosTasasShared = l.DatosTasasComponent;
+
+    const z = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4206/remoteEntry.js',
+      exposedModule: './DatosIbiSharedComponent',
+    });
+    this.datosIbiShared = z.DatosIbiComponent;
+
+    const x = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4206/remoteEntry.js',
+      exposedModule: './DatosIvtmSharedComponent',
+    });
+    this.datosIvtmShared = x.DatosIvtmComponent;
   }
 
   async loadMicrofrontend1() {

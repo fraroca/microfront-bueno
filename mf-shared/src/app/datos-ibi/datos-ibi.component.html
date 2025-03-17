@@ -1,0 +1,21 @@
+<div class="summary-container">
+    <h2>Resumen de IBI</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Referencia Catastral</th>
+          <th>Dirección</th>
+          <th>Importe (€)</th>
+          <th>Periodo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of ibiData">
+          <td>{{ item.referenciaCatastral }}</td>
+          <td>{{ item.direccion }}</td>
+          <td>{{ item.importe | number }}</td>
+          <td>{{ item.periodo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

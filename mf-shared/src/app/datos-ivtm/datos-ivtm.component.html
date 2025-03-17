@@ -1,0 +1,21 @@
+<div class="summary-container">
+    <h2>Resumen de IVTM</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Matrícula</th>
+          <th>Marca y Modelo</th>
+          <th>Importe (€)</th>
+          <th>Periodo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of ivtmData">
+          <td>{{ item.matricula }}</td>
+          <td>{{ item.marcaModelo }}</td>
+          <td>{{ item.importe | number }}</td>
+          <td>{{ item.periodo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

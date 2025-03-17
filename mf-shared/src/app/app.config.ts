@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
         },
         recaudacion: {
           link: httpLink.create({
-            uri: 'https://localhost:8000/graphql',
+            uri: 'http://localhost:8000/graphql/',
           }),
           cache: new InMemoryCache(),
         },
